@@ -54,8 +54,9 @@ class UserApi extends \Zikula_AbstractApi
             return array();
         }
         $qb = $this->entityManager->createQueryBuilder();
+		// @todo review shortcut format here
         $qb->select('p')
-            ->from('ZikulaProfileModule:PropertyEntity', 'p')
+            ->from('Zikula\ProfileModule\Entity\PropertyEntity', 'p')
             ->orderBy('p.prop_weight');
         if ($args['startnum'] > 0) {
             $qb->setFirstResult($args['startnum'] - 1);
