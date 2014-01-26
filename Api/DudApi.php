@@ -16,13 +16,13 @@
  * API functions related to dynamic user data field management.
  */
 
-namespace Zikula\Module\ProfileModule\Api;
+namespace Zikula\ProfileModule\Api;
 
 use DataUtil;
 use ModUtil;
 use SecurityUtil;
 use System;
-use Zikula\Module\ProfileModule\Entity\PropertyEntity;
+use Zikula\ProfileModule\Entity\PropertyEntity;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DudApi extends \Zikula_AbstractApi
@@ -141,7 +141,7 @@ class DudApi extends \Zikula_AbstractApi
             throw new \InvalidArgumentException();
         }
         // Get item with where clause
-        /** @var $item \Zikula\Module\ProfileModule\Entity\PropertyEntity */
+        /** @var $item \Zikula\ProfileModule\Entity\PropertyEntity */
         if (isset($args['propid'])) {
             $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->find((int)$args['propid']);
         } elseif (isset($args['proplabel'])) {

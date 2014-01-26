@@ -1,6 +1,6 @@
 <?php
 
-namespace Zikula\Module\ProfileModule;
+namespace Zikula\ProfileModule;
 
 use Zikula\Core\AbstractModule;
 

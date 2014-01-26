@@ -13,7 +13,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule\DependencyInjection;
+namespace Zikula\ProfileModule\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;

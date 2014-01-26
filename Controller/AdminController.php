@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule\Controller;
+namespace Zikula\ProfileModule\Controller;
 
 use DataUtil;
 use ModUtil;
@@ -396,7 +396,7 @@ class AdminController extends \Zikula_AbstractController
         if (!SecurityUtil::checkPermission($this->name.'::item', "{$item['prop_label']}::{$item['prop_id']}", ACCESS_EDIT)) {
             throw new AccessDeniedException();
         }
-        /** @var $prop \Zikula\Module\ProfileModule\Entity\PropertyEntity */
+        /** @var $prop \Zikula\ProfileModule\Entity\PropertyEntity */
         $prop = $this->entityManager->find('ZikulaProfileModule:PropertyEntity', $dudid);
         $prop->incrementWeight();
         $this->entityManager->flush();
@@ -429,7 +429,7 @@ class AdminController extends \Zikula_AbstractController
         if ($item['prop_weight'] <= 1) {
             return $this->request->getSession()->getFlashBag()->add('error', $this->__('Error! You cannot decrease the weight of this account property.'));
         }
-        /** @var $prop \Zikula\Module\ProfileModule\Entity\PropertyEntity */
+        /** @var $prop \Zikula\ProfileModule\Entity\PropertyEntity */
         $prop = $this->entityManager->find('ZikulaProfileModule:PropertyEntity', $dudid);
         $prop->decrementWeight();
         $this->entityManager->flush();

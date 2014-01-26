@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule;
+namespace Zikula\ProfileModule;
 
 /**
  * Profile module version information and other metadata.
@@ -33,7 +33,7 @@ class ProfileModuleVersion extends \Zikula_AbstractVersion
             'url' => $this->__('profile'),
             'version' => '2.0.0-beta',
             'core_min' => '1.3.7',
-            'core_max' => '1.3.99',
+            'core_max' => '1.4.99',
             'capabilities' => array(
                 'profile' => array('version' => '1.0')
             ),

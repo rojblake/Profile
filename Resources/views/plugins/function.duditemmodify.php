@@ -13,7 +13,7 @@
  */
 
 use Symfony\Component\HttpFoundation\Request;
-use Zikula\Module\ProfileModule\Constant as ProfileConstant;
+use Zikula\ProfileModule\Constant as ProfileConstant;
 use Zikula\Module\UsersModule\Constant as UsersConstant;
 
 /**

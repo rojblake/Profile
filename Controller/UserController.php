@@ -16,7 +16,7 @@
  * UI operations executable by general users.
  */
 
-namespace Zikula\Module\ProfileModule\Controller;
+namespace Zikula\ProfileModule\Controller;
 
 use DataUtil;
 use ModUtil;

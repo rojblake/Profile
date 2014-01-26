@@ -16,12 +16,12 @@
  * Profile module installer.
  */
 
-namespace Zikula\Module\ProfileModule;
+namespace Zikula\ProfileModule;
 
 use DoctrineHelper;
 use EventUtil;
 use System;
-use Zikula\Module\ProfileModule\Entity\PropertyEntity;
+use Zikula\ProfileModule\Entity\PropertyEntity;
 
 class ProfileModuleInstaller extends \Zikula_AbstractInstaller
 {
@@ -48,7 +48,7 @@ class ProfileModuleInstaller extends \Zikula_AbstractInstaller
     public function install()
     {
         try {
-            DoctrineHelper::createSchema($this->entityManager, array('Zikula\Module\ProfileModule\Entity\PropertyEntity'));
+            DoctrineHelper::createSchema($this->entityManager, array('Zikula\ProfileModule\Entity\PropertyEntity'));
         } catch (\Exception $e) {
             $this->request->getSession()->getFlashBag()->add('error', $e->getMessage());
             return false;
@@ -139,7 +139,7 @@ class ProfileModuleInstaller extends \Zikula_AbstractInstaller
     public function uninstall()
     {
         try {
-            DoctrineHelper::dropSchema($this->entityManager, array('Zikula\Module\ProfileModule\Entity\PropertyEntity'));
+            DoctrineHelper::dropSchema($this->entityManager, array('Zikula\ProfileModule\Entity\PropertyEntity'));
         } catch (\PDOException $e) {
             $this->request->getSession()->getFlashBag()->add('error', $e->getMessage());
             return false;

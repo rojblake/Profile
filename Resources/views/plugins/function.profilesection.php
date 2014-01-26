@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-use Zikula\Module\ProfileModule\Constant as ProfileConstant;
+use Zikula\ProfileModule\Constant as ProfileConstant;
 
 /**
  * Smarty function to display a section of the user profile.

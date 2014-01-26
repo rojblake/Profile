@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule\Block;
+namespace Zikula\ProfileModule\Block;
 
 use SecurityUtil;
 use ModUtil;

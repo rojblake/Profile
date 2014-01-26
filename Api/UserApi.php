@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule\Api;
+namespace Zikula\ProfileModule\Api;
 
 use SecurityUtil;
 use UserUtil;
@@ -102,7 +102,7 @@ class UserApi extends \Zikula_AbstractApi
         if (!isset($args['propid']) && !isset($args['proplabel']) && !isset($args['propattribute'])) {
             throw new \InvalidArgumentException();
         }
-        /** @var $item \Zikula\Module\ProfileModule\Entity\PropertyEntity */
+        /** @var $item \Zikula\ProfileModule\Entity\PropertyEntity */
         if (isset($args['propid'])) {
             $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->find((int)$args['propid']);
         } elseif (isset($args['proplabel'])) {
@@ -270,7 +270,7 @@ class UserApi extends \Zikula_AbstractApi
     public function countitems()
     {
         // Return the number of items
-        $query = $this->entityManager->createQuery('SELECT COUNT(p.prop_id) FROM Zikula\Module\ProfileModule\Entity\PropertyEntity p');
+        $query = $this->entityManager->createQuery('SELECT COUNT(p.prop_id) FROM Zikula\ProfileModule\Entity\PropertyEntity p');
         return $query->getSingleScalarResult();
     }
 
@@ -281,9 +281,9 @@ class UserApi extends \Zikula_AbstractApi
      */
     public function getweightlimits()
     {
-        $query = $this->entityManager->createQuery('SELECT MAX(p.prop_weight) FROM Zikula\Module\ProfileModule\Entity\PropertyEntity p');
+        $query = $this->entityManager->createQuery('SELECT MAX(p.prop_weight) FROM Zikula\ProfileModule\Entity\PropertyEntity p');
         $max = $query->getSingleScalarResult();
-        $query = $this->entityManager->createQuery('SELECT MIN(p.prop_weight) FROM Zikula\Module\ProfileModule\Entity\PropertyEntity p');
+        $query = $this->entityManager->createQuery('SELECT MIN(p.prop_weight) FROM Zikula\ProfileModule\Entity\PropertyEntity p');
         $min = $query->getSingleScalarResult();
         // Return the number of items
         return array('min' => $min, 'max' => $max);

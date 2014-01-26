@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-use Zikula\Module\ProfileModule\Constant as ProfileConstant;
+use Zikula\ProfileModule\Constant as ProfileConstant;
 
 /**
  * Get either a Gravatar URL or complete image tag for a specified email address.

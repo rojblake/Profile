@@ -16,7 +16,7 @@
  * API functions related to member list management.
  */
 
-namespace Zikula\Module\ProfileModule\Api;
+namespace Zikula\ProfileModule\Api;
 
 use SecurityUtil;
 use Zikula\Module\UsersModule\Constant as UsersConstant;

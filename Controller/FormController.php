@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule\Controller;
+namespace Zikula\ProfileModule\Controller;
 
 use ModUtil;
 use System;

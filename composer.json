@@ -11,14 +11,14 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Zikula\\Module\\ProfileModule\\": "" }
+        "psr-4": { "Zikula\\ProfileModule\\": "" }
     },
     "require": {
         "php": ">5.3.3"
     },
     "extra": {
         "zikula": {
-            "class": "Zikula\\Module\\ProfileModule\\ZikulaProfileModule"
+            "class": "Zikula\\ProfileModule\\ZikulaProfileModule"
         }
     }
 }

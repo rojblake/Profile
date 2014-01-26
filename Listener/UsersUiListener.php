@@ -12,12 +12,12 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule\Listener;
+namespace Zikula\ProfileModule\Listener;
 
 use DataUtil;
 use ModUtil;
 use UserUtil;
-use Zikula\Module\ProfileModule\Constant as ProfileConstant;
+use Zikula\ProfileModule\Constant as ProfileConstant;
 use Zikula\Core\Hook\ValidationResponse;
 use Zikula_View;
 use ZLanguage;

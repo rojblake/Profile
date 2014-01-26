@@ -12,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Zikula\Module\ProfileModule;
+namespace Zikula\ProfileModule;
 
 
 /**
