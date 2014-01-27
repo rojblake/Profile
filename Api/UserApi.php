@@ -104,12 +104,13 @@ class UserApi extends \Zikula_AbstractApi
             throw new \InvalidArgumentException();
         }
         /** @var $item \Zikula\ProfileModule\Entity\PropertyEntity */
+		// @todo review shortcut format here
         if (isset($args['propid'])) {
-            $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->find((int)$args['propid']);
+            $item = $this->entityManager->getRepository('Zikula\ProfileModule\Entity\PropertyEntity')->find((int)$args['propid']);
         } elseif (isset($args['proplabel'])) {
-            $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->findOneBy(array('prop_label' => $args['proplabel']));
+            $item = $this->entityManager->getRepository('Zikula\ProfileModule\Entity\PropertyEntity')->findOneBy(array('prop_label' => $args['proplabel']));
         } else {
-            $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->findOneBy(array('prop_attribute_name' => $args['propattribute']));
+            $item = $this->entityManager->getRepository('Zikula\ProfileModule\Entity\PropertyEntity')->findOneBy(array('prop_attribute_name' => $args['propattribute']));
         }
         // Check for no rows found, and if so return
         if (!$item) {
@@ -174,7 +175,7 @@ class UserApi extends \Zikula_AbstractApi
         if (!isset($items)) {
             $qb = $this->entityManager->createQueryBuilder();
             $qb->select('p')
-                ->from('ZikulaProfileModule:PropertyEntity', 'p')
+                ->from('Zikula\ProfileModule\Entity\PropertyEntity', 'p')
                 ->where('p.prop_weight > 0')
                 ->andWhere('p.prop_dtype >= 0')
                 ->orderBy('p.prop_weight');

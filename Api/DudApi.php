@@ -143,11 +143,11 @@ class DudApi extends \Zikula_AbstractApi
         // Get item with where clause
         /** @var $item \Zikula\ProfileModule\Entity\PropertyEntity */
         if (isset($args['propid'])) {
-            $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->find((int)$args['propid']);
+            $item = $this->entityManager->getRepository('Zikula\ProfileModule\Entity\PropertyEntity')->find((int)$args['propid']);
         } elseif (isset($args['proplabel'])) {
-            $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->findOneBy(array('prop_label' => $args['proplabel']));
+            $item = $this->entityManager->getRepository('Zikula\ProfileModule\Entity\PropertyEntity')->findOneBy(array('prop_label' => $args['proplabel']));
         } else {
-            $item = $this->entityManager->getRepository('ZikulaProfileModule:PropertyEntity')->findOneBy(array('prop_attribute_name' => $args['propattribute']));
+            $item = $this->entityManager->getRepository('Zikula\ProfileModule\Entity\PropertyEntity')->findOneBy(array('prop_attribute_name' => $args['propattribute']));
         }
         // Check for no rows found, and if so return
         if (!$item) {
@@ -164,7 +164,7 @@ class DudApi extends \Zikula_AbstractApi
             ->setParameter('name', $item['prop_attribute_name']);
         $qb->getQuery()->execute();
         // delete the property
-        $qb->delete('ZikulaProfileModule:PropertyEntity', 'p')
+        $qb->delete('Zikula\ProfileModule\Entity\PropertyEntity', 'p')
             ->where('p.prop_id = :id')
             ->setParameter('id', $item['prop_id']);
         $qb->getQuery()->execute();
